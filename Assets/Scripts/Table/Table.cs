@@ -7,6 +7,7 @@ public class Table
 {
     List<TableRow> rows;
     List<string> columns;
+    string savePath;
 
     public Table()
     {
@@ -29,17 +30,14 @@ public class Table
     {
 
         string filePath = Path.Combine(Application.dataPath, @_fileName);
+        string dirPath = filePath.Substring(0, filePath.LastIndexOf("/", StringComparison.CurrentCulture));
 
-        string dirPath;
-        if (Application.platform == (RuntimePlatform.WindowsPlayer | RuntimePlatform.WindowsEditor))
-            dirPath = filePath.Substring(0, filePath.LastIndexOf("/", StringComparison.CurrentCulture));
-        else dirPath = filePath.Substring(0, filePath.LastIndexOf("\\", StringComparison.CurrentCulture));
-        if (!Directory.Exists(dirPath)) Directory.CreateDirectory(dirPath);
+        if (!Directory.Exists(dirPath))
+        Directory.CreateDirectory(dirPath);
 
         // Tableファイルに書き込む
         try
         {
-
             using (StreamWriter sw = File.CreateText(filePath))
             {
 

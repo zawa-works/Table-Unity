@@ -8,9 +8,9 @@ public class TableSample : MonoBehaviour
     {
         Table table = new Table();
 
-        table.addColumn("name");
-        table.addColumn("x");
-        table.addColumn("y");
+        table.addColumn("username");
+        table.addColumn("intValue");
+        table.addColumn("floatValue");
 
         TableRow newRow = new TableRow();
         newRow.setString("username", "jon");
