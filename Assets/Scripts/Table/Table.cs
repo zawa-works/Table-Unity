@@ -7,14 +7,11 @@ public class Table
 {
     List<TableRow> rows;
     List<string> columns;
-    string fileName;
 
-    public Table(string _fileName)
+    public Table()
     {
-        fileName = _fileName;
         rows = new List<TableRow>();
         columns = new List<string>();
-
     }
 
     public void addColumn(string column)
@@ -28,9 +25,10 @@ public class Table
         rows.Add(_row);
     }
 
-    public void save()
+    public void save(String _fileName)
     {
-        string filePath = Path.Combine(Application.dataPath, @fileName);
+
+        string filePath = Path.Combine(Application.dataPath, @_fileName);
         string dirPath = filePath.Substring(0, filePath.LastIndexOf("/", StringComparison.CurrentCulture));
         if (!Directory.Exists(dirPath)) Directory.CreateDirectory(dirPath);
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TableSample : MonoBehaviour
+public class TableTest : MonoBehaviour
 {
     void Start()
     {
