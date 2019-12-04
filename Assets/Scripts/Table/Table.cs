@@ -29,7 +29,11 @@ public class Table
     {
 
         string filePath = Path.Combine(Application.dataPath, @_fileName);
-        string dirPath = filePath.Substring(0, filePath.LastIndexOf("/", StringComparison.CurrentCulture));
+
+        string dirPath;
+        if (Application.platform == (RuntimePlatform.WindowsPlayer | RuntimePlatform.WindowsEditor))
+            dirPath = filePath.Substring(0, filePath.LastIndexOf("/", StringComparison.CurrentCulture));
+        else dirPath = filePath.Substring(0, filePath.LastIndexOf("\\", StringComparison.CurrentCulture));
         if (!Directory.Exists(dirPath)) Directory.CreateDirectory(dirPath);
 
         // Tableファイルに書き込む
