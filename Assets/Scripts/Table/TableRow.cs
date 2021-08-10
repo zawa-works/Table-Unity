@@ -13,33 +13,33 @@ public class TableRow
 
     }
 
-    public void setInt(string key, int value)
+    public void SetInt(string key, int value)
     {
         dict.Add(key, value);
         Length = dict.Count;
     }
 
-    public void setFloat(string key, float value)
+    public void SetFloat(string key, float value)
     {
         dict.Add(key, value);
         Length = dict.Count;
 
     }
 
-    public void setString(string key, string name)
+    public void SetString(string key, string name)
     {
         dict.Add(key, name);
         Length = dict.Count;
 
     }
 
-    public object getObject(string key)
+    public object GetObject(string key)
     {
         return dict[key];
 
     }
 
-    public string[] getKeys()
+    public string[] GetKeys()
     {
         var keyList = new List<string>();
 

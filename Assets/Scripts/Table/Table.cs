@@ -15,18 +15,18 @@ public class Table
         columns = new List<string>();
     }
 
-    public void addColumn(string column)
+    public void AddColumn(string column)
     {
         columns.Add(column);
     }
 
 
-    public void addRow(TableRow _row)
+    public void AddRow(TableRow _row)
     {
         rows.Add(_row);
     }
 
-    public void save(String _fileName)
+    public void Save(String _fileName)
     {
 
         string filePath = Path.Combine(Application.dataPath, @_fileName);
@@ -42,11 +42,11 @@ public class Table
             {
 
                 //最初にcolumns（ヘッダーの内容）を書き込む
-                sw.WriteLine(format(columns));
+                sw.WriteLine(Format(columns));
 
                 //取得した情報を書き込む
                 foreach (TableRow row in rows)
-                    sw.WriteLine(format(row));
+                    sw.WriteLine(Format(row));
                 sw.Close();
             }
         }
@@ -55,7 +55,7 @@ public class Table
             Debug.Log(e.Message);
         }
     }
-    string format(List<string> _columns)
+    string Format(List<string> _columns)
     {
         string str = "";
         int lastIndex = _columns.Count - 1;
@@ -68,7 +68,7 @@ public class Table
         return str;
 
     }
-    string format(TableRow row)
+    string Format(TableRow row)
     {
         string str = "";
         int lastIndex = columns.Count - 1;
