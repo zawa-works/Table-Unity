@@ -9,15 +9,15 @@
 ```c#
 Table table = new Table();
 
-table.addColumn("name");
-table.addColumn("x");
-table.addColumn("y");
+table.AddColumn("name");
+table.AddColumn("x");
+table.AddColumn("y");
 
 TableRow newRow = new TableRow();
-newRow.setString("username", "jon");
-newRow.setInt("intValue", Random.Range(0, 10));
-newRow.setFloat("floatValue", Random.Range(0.0f, 10.0f));
-table.addRow(newRow);
+newRow.SetString("username", "jon");
+newRow.SetInt("intValue", Random.Range(0, 10));
+newRow.SetFloat("floatValue", Random.Range(0.0f, 10.0f));
+table.AddRow(newRow);
 
 table.save("data/hoge.csv");//Assetsのなかのdataフォルダに追加される
 ```
