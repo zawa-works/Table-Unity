@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Collections.Generic;
 using UnityEngine;
@@ -74,9 +74,9 @@ public class Table
         int lastIndex = columns.Count - 1;
 
         for (int i = 0; i < lastIndex; i++)
-            str += row.getObject(columns[i]) + ",";
+            str += row.GetObject(columns[i]) + ",";
 
-        str += row.getObject(columns[lastIndex]);
+        str += row.GetObject(columns[lastIndex]);
 
         return str;
 
